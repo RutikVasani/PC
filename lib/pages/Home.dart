@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'AllPC.dart';
-import 'delivered.dart';
-import 'donepage.dart';
-import 'engineeringPage.dart';
-import 'pending.dart';
-import 'reportpage.dart';
+import 'package:pc/pages/Report/ReportPage.dart';
+import 'workflow/AllPC.dart';
+import 'workflow/delivered.dart';
+import 'workflow/donepage.dart';
+import 'workflow/pending.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -12,46 +11,12 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        elevation: 0.0,
-        backgroundColor: Colors.blue,
-        toolbarHeight: 70.0,
-        title: Text('PC Computer'),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.engineering),
-            onPressed: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => EngineeringPage()));
-            },
-          ),
-          IconButton(
-            icon: const Icon(Icons.settings),
-            onPressed: () {},
-          ),
-        ],
-        leading: IconButton(onPressed: (() {}), icon: const Icon(Icons.home)),
-        bottom: AppBar(
-          title: Container(
-            width: double.infinity,
-            height: 40,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(5), color: Colors.white),
-            child: Center(
-              child: TextField(
-                decoration: InputDecoration(
-                    hintText: 'PC Number', prefixIcon: Icon(Icons.search)),
-              ),
-            ),
-          ),
-        ),
-      ),
       body: SafeArea(
         child: Container(
           color: Colors.grey[50],
           child: Padding(
             padding:
-                const EdgeInsets.only(left: 10, right: 10, top: 15, bottom: 15),
+                const EdgeInsets.only(left: 10, right: 10, bottom: 10),
             child: Column(
               // mainAxisAlignment: MainAxisAlignment.spaceAround,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -244,11 +209,11 @@ class HomePage extends StatelessWidget {
                 SizedBox(height: 25),
                 Container(
                   width: 400,
-                  height: 423,
+                  height: 465,
                   decoration: BoxDecoration(
                       color: Colors.blue,
                       borderRadius: BorderRadius.circular(20), border: Border.all(color: Colors.blue, width: 5),),
-                  child: Scaffold(
+                  child: const Scaffold(
                     backgroundColor: Colors.transparent,
                     body: ReportPage(),
                   ),

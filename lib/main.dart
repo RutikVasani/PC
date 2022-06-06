@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'pages/Home.dart';
+import 'package:pc/appbar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,8 +13,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     // ignore: prefer_const_constructors
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: HomePage(),
+          debugShowCheckedModeBanner: false,
+          home: AppBarPage(),
     );
   }
 }
